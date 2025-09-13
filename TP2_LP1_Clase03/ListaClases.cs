@@ -58,19 +58,14 @@ namespace TP2_LP1_Clase03
         {
             listBox1.Items.Clear();
             foreach (Persona persona in personas) {
-                listBox1.Items.Add(new Item { texto = $"{persona.apellido}, {persona.nombre}", valor = persona.id });
+                listBox1.Items.Add(persona);
             }
             
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int idSelecionado = 0;
-            if(listBox1.SelectedItem is Item item)
-            {
-                idSelecionado = item.valor;
-            }
-            Persona personaSeleccionada = personas.FirstOrDefault(p => p.id == idSelecionado);
+            Persona personaSeleccionada = (Persona)listBox1.SelectedItem;
             txtApellido.Text = personaSeleccionada.apellido;
             txtNombre.Text = personaSeleccionada.nombre;
             numericUpDown1.Value = personaSeleccionada.edad;
