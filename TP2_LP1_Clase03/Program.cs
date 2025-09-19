@@ -16,7 +16,7 @@ namespace TP2_LP1_Clase03
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new ListaClases());
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -38,9 +39,22 @@
             this.button3 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this._TP2_LP1_202402DataSet = new TP2_LP1_Clase03._TP2_LP1_202402DataSet();
+            this.personasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.personasTableAdapter = new TP2_LP1_Clase03._TP2_LP1_202402DataSetTableAdapters.PersonasTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._TP2_LP1_202402DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -133,20 +147,84 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 5;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.apellidoDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.edadDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.personaBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(37, 251);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(447, 147);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // _TP2_LP1_202402DataSet
+            // 
+            this._TP2_LP1_202402DataSet.DataSetName = "_TP2_LP1_202402DataSet";
+            this._TP2_LP1_202402DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // personasBindingSource
+            // 
+            this.personasBindingSource.DataMember = "Personas";
+            this.personasBindingSource.DataSource = this._TP2_LP1_202402DataSet;
+            // 
+            // personasTableAdapter
+            // 
+            this.personasTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // edadDataGridViewTextBoxColumn
+            // 
+            this.edadDataGridViewTextBoxColumn.DataPropertyName = "edad";
+            this.edadDataGridViewTextBoxColumn.HeaderText = "edad";
+            this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
+            // 
+            // personaBindingSource
+            // 
+            this.personaBindingSource.DataSource = typeof(TP2_LP1_Clase03.Persona);
+            // 
             // ListaClases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 258);
+            this.ClientSize = new System.Drawing.Size(672, 442);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "ListaClases";
             this.Text = "ListaClases";
+            this.Load += new System.EventHandler(this.ListaClases_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._TP2_LP1_202402DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,5 +242,14 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private _TP2_LP1_202402DataSet _TP2_LP1_202402DataSet;
+        private System.Windows.Forms.BindingSource personasBindingSource;
+        private _TP2_LP1_202402DataSetTableAdapters.PersonasTableAdapter personasTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource personaBindingSource;
     }
 }
